@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_common_white_back">#000000</color>
+    <color name="color_common_drag">#2d2d2d</color>
+    <color name="color_common_level_one_text">#FFFFFFFF</color>
+</resources>

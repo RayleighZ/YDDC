@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">YDDC</string>
+    <string name="menu_calendar">进度</string>
+    <string name="menu_mine">个人</string>
+    <string name="menu_comment">社区</string>
+</resources>

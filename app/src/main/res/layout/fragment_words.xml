@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_common_bottom_sheet">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="80dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_common_drag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/color_common_level_one_text"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sorrow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_words_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/color_common_level_two_text"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+        tools:text="CET6" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/pb_words_master_level"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:max="100"
+        android:progress="75"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_words_tag"
+        app:layout_constraintEnd_toEndOf="@+id/appCompatTextView"
+        app:layout_constraintStart_toEndOf="@+id/tv_words_tag"
+        app:layout_constraintTop_toTopOf="@+id/tv_words_tag" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_words_clearfix"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textColor="@color/color_common_level_two_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_words_tag"
+        tools:text="n.  悲伤；悲哀；悲痛；不幸" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_words_sentence"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/color_common_level_two_text"
+        android:textStyle="italic"
+        android:background="@drawable/shape_text_tree_conor"
+        android:padding="30dp"
+        tools:text="The intensity of a moment can be increased with cinematography and editing, not just with performance.\n
+强度的时刻,可以增加与摄影和编辑, 而不只是与表现.\n
+The intensity of a nearby jet taking off is about 110 decibels.\n
+一架在附近起飞的喷气机的声音强度大约是110分贝.\n
+How to Decompose Indicators of GDP Energy Intensity Reduction?\n
+GDP能耗降低指标如何分解?
+With the decrease of light intensity, rhizome biomass of clone and per unit length declined.\n
+随着光照强度的降低, 无性系单位长度根茎生物量下降."
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_words_clearfix" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
