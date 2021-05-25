@@ -28,6 +28,6 @@ open class BaseFragment<T : ViewModel>(private val layoutId: Int) : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return layoutInflater.inflate(layoutId, container)
+        return layoutInflater.inflate(layoutId, container, false)
     }
 }

@@ -52,8 +52,8 @@ public interface Api {
 
     //通过id获取单词信息
     @GET("/word/words/all/")
-    Observable<Word> getWordById(
+    Observable<List<Word>> getWordById(
             @Query("id")
-            String id
+            int id
     );
 }

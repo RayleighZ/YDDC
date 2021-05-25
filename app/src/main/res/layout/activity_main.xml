@@ -4,26 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.pages.main.MainActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/color_common_drag"
+        android:animateLayoutChanges="true">
 
         <androidx.viewpager2.widget.ViewPager2
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_word_glance"
+            android:id="@+id/vp_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingBottom="80dp"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_word_glance"
+            android:elevation="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="60dp"
             app:behavior_peekHeight="90dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:theme="@style/BottomSheetStyle"
             app:menu="@menu/main_bottom_menu"

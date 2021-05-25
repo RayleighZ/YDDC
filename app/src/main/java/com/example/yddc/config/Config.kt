@@ -1,5 +1,8 @@
 package com.example.yddc.config
 
+import android.content.Context
+import android.content.res.Resources
+
 /**
  * Author: RayleighZ
  * Time: 2021-05-24 15:40
@@ -8,7 +11,7 @@ package com.example.yddc.config
  */
 object Config {
     //BaseUrl
-    val BASE_URL = "http://127.0.0.1:8000/"
+    val BASE_URL = "http://396y54v708.wicp.vip:17260"
 
     //默认sp的名称
     val DEFAULT_SP_NAME = "com.yddc"

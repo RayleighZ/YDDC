@@ -21,9 +21,9 @@ data class Word(
     @SerializedName("tag")
     val tag: String,
     @SerializedName("word_deformation")
-    val word_deformation: String,
+    val word_deformation: String = "",
     @SerializedName("href")
-    val href: String,
+    val href: String = "",
     @SerializedName("audio")
-    val audio: String
+    val audio: String = ""
 ): Serializable
