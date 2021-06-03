@@ -13,9 +13,17 @@ object UserService {
     private val USER_INFO_KEY = "user_info"
 
     val userInfo by lazy {
-        Gson().fromJson(
-            BaseApp.context.defaultSharedPreferences.getString(USER_INFO_KEY, ""),
-            UserInfo::class.java
-        )
+
+    }
+
+    fun getUserInfo(): UserInfo? = Gson().fromJson(
+        BaseApp.context.defaultSharedPreferences.getString(USER_INFO_KEY, ""),
+        UserInfo::class.java
+    )
+
+    fun setUserInfo(info: UserInfo) {
+        BaseApp.context.defaultSharedPreferences.editor {
+            putString(USER_INFO_KEY, Gson().toJson(info))
+        }
     }
 }

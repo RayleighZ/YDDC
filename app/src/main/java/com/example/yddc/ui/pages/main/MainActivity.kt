@@ -1,5 +1,6 @@
 package com.example.yddc.ui.pages.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import com.example.yddc.BaseApp
 import com.example.yddc.R
+import com.example.yddc.common.UserService
 import com.example.yddc.common.getStatusBarHeight
 import com.example.yddc.common.toast
 import com.example.yddc.common.topPadding
@@ -15,7 +17,9 @@ import com.example.yddc.network.Api
 import com.example.yddc.network.api_generator.ApiGenerator
 import com.example.yddc.network.api_generator.safeSubscribeBy
 import com.example.yddc.network.api_generator.setSchedulers
+import com.example.yddc.ui.pages.login.LoginActivity
 import com.example.yddc.ui.pages.main.adapter.ViewPagerAdapter
+import com.example.yddc.ui.pages.process.TotalProcessActivity
 import com.example.yddc.ui.pages.words.StartRemFragment
 import com.example.yddc.ui.pages.words.WordsFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -35,6 +39,14 @@ class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (UserService.getUserInfo() == null){
+            startActivity(
+                Intent(
+                    this,
+                    LoginActivity::class.java
+                )
+            )
+        }
         initView()
     }
 
@@ -62,6 +74,9 @@ class MainActivity : FragmentActivity() {
                 }
                 R.id.menu_main_bottom_comment -> {
                     BaseApp.context.toast("此功能正在开发")
+                    startActivity(
+                        Intent(this, TotalProcessActivity::class.java)
+                    )
                 }
                 R.id.menu_main_bottom_mine -> {
                     vp_main.currentItem = 1

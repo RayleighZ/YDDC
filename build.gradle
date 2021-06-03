@@ -21,6 +21,7 @@ allprojects {
         google()
         mavenCentral()
         maven {url 'https://dl.bintray.com/jetbrains/anko'}
+        maven { url 'https://www.jitpack.io' }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }

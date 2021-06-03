@@ -7,6 +7,7 @@ import com.example.yddc.common.toast
 import com.example.yddc.model.bean.Word
 import com.example.yddc.model.database.WordsModel
 import com.example.yddc.util.insertEnter
+import kotlin.random.Random
 
 /**
  * Author: RayleighZ
@@ -68,14 +69,23 @@ class WordsViewModel : ViewModel() {
         loadMeaning()
     }
 
+    private val selMeaningList = listOf(
+        selMeaning1,
+        selMeaning2,
+        selMeaning3,
+        selMeaning4
+    )
+
     //TODO: 实现真正的展示Meaning逻辑
     private fun loadMeaning(){
-        //TODO: 必然会数组越界，只是为了模拟数据
-        selMeaning1.set(words[curWordIndex + 0].clearfix)
-        selMeaning2.set(words[curWordIndex + 1].clearfix)
-        selMeaning3.set(words[curWordIndex + 2].clearfix)
-        selMeaning4.set(words[curWordIndex + 3].clearfix)
-        rightAnswer = 1
+        rightAnswer = java.util.Random().nextInt(4)
+        for (i in selMeaningList.indices){
+            if (i == rightAnswer - 1){
+                selMeaningList[rightAnswer - 1].set(words[curWordIndex].clearfix)
+            } else {
+                selMeaningList[i].set(words[java.util.Random().nextInt(19)].clearfix)
+            }
+        }
     }
 
     fun judgeAnswer(index: Int){

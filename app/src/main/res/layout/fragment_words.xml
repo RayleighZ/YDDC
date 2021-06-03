@@ -109,19 +109,17 @@ With the decrease of light intensity, rhizome biomass of clone and per unit leng
             android:src="@drawable/ic_sentence"
             app:layout_constraintBottom_toBottomOf="@+id/pb_words_master_level"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
             app:layout_constraintVertical_bias="0.541" />
 
         <ImageView
             android:id="@+id/iv_answer"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:src="@drawable/ic_answer"
-            app:layout_constraintEnd_toEndOf="@+id/iv_sentence"
-            app:layout_constraintStart_toStartOf="@+id/iv_sentence"
-            app:layout_constraintTop_toBottomOf="@+id/iv_sentence" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintEnd_toStartOf="@+id/iv_sentence"
+            app:layout_constraintTop_toTopOf="@+id/iv_sentence" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_meaning_choose"
