@@ -3,8 +3,8 @@
     <item android:id="@+id/menu_main_bottom_calendar"
         android:icon="@drawable/ic_calendar"
         android:title="@string/menu_calendar"/>
-    <item android:id="@+id/menu_main_bottom_comment"
-        android:icon="@drawable/ic_comment"
+    <item android:id="@+id/menu_main_bottom_community"
+        android:icon="@drawable/ic_community"
         android:title="@string/menu_comment"/>
     <item android:id="@+id/menu_main_bottom_mine"
         android:icon="@drawable/ic_mine"

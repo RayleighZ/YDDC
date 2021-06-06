@@ -17,7 +17,7 @@
             android:id="@+id/vp_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingBottom="80dp"/>
+            android:paddingBottom="80dp" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv_main_word_glance"

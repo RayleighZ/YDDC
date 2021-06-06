@@ -72,11 +72,12 @@ class MainActivity : FragmentActivity() {
                 R.id.menu_main_bottom_calendar -> {
                     vp_main.currentItem = 0
                 }
-                R.id.menu_main_bottom_comment -> {
-                    BaseApp.context.toast("此功能正在开发")
-                    startActivity(
-                        Intent(this, TotalProcessActivity::class.java)
-                    )
+                R.id.menu_main_bottom_community -> {
+                    vp_main.currentItem = 2
+//                    BaseApp.context.toast("此功能正在开发")
+//                    startActivity(
+//                        Intent(this, TotalProcessActivity::class.java)
+//                    )
                 }
                 R.id.menu_main_bottom_mine -> {
                     vp_main.currentItem = 1

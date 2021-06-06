@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="电话"
+        android:text="个签:"
         android:textColor="@color/color_common_level_one_text"
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
@@ -71,7 +71,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="13963215959"
+        android:text="I was born to do."
+        android:textColor="#FF03DAC5"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
@@ -86,6 +87,7 @@
         android:textSize="23sp"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
 
     <LinearLayout
         android:layout_width="0dp"
