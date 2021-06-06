@@ -2,6 +2,9 @@ package com.example.yddc.ui.pages.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Message
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.FragmentActivity
@@ -22,9 +25,12 @@ import com.example.yddc.ui.pages.main.adapter.ViewPagerAdapter
 import com.example.yddc.ui.pages.process.TotalProcessActivity
 import com.example.yddc.ui.pages.words.StartRemFragment
 import com.example.yddc.ui.pages.words.WordsFragment
+import com.example.yddc.util.ViewType
+import com.example.yddc.util.fadedTurn
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_rem_words.*
+import java.util.*
 
 
 /**
@@ -39,14 +45,18 @@ class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (UserService.getUserInfo() == null){
-            startActivity(
-                Intent(
-                    this,
-                    LoginActivity::class.java
-                )
-            )
-        }
+
+        val handler = MyHandler(this)
+
+        Thread{
+            Thread.sleep(1000)
+            handler.sendEmptyMessage(1)
+        }.start()
+
+//        cl_welcome.fadedTurn(1000, ViewType.TYPE_HIDE){
+//            cl_main.visibility = View.VISIBLE
+//            cl_main.fadedTurn(1000, ViewType.TYPE_SHOW)
+//        }
         initView()
     }
 
@@ -117,6 +127,25 @@ class MainActivity : FragmentActivity() {
             replace(R.id.fcv_main_word_glance, wordsFragment, "wordsFragment")
             addToBackStack("startRem")
             show(wordsFragment)
+        }
+    }
+
+    class MyHandler(val activity: MainActivity) : Handler(Looper.myLooper()!!){
+        override fun handleMessage(msg: Message) {
+            activity.apply {
+                cl_welcome.fadedTurn(1000, ViewType.TYPE_HIDE){
+                    cl_main.visibility = View.VISIBLE
+//                    cl_main.fadedTurn(1000, ViewType.TYPE_SHOW)
+                    if (UserService.getUserInfo() == null){
+                        startActivity(
+                            Intent(
+                                this,
+                                LoginActivity::class.java
+                            )
+                        )
+                    }
+                }
+            }
         }
     }
 }

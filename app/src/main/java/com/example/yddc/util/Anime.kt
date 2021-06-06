@@ -41,6 +41,23 @@ fun View.expandFromLeftConor(duration: Long, finalType: ViewType, onEnd: (()->Un
     animator.start()
 }
 
+fun View.fadedTurn(duration: Long, finalType: ViewType, onEnd: (()->Unit)? = null){
+    val animator =
+        when (finalType){
+            ViewType.TYPE_HIDE -> ValueAnimator.ofFloat(1f, 0f)
+            ViewType.TYPE_SHOW -> ValueAnimator.ofFloat(0f, 1f)
+        }
+    animator.duration = duration
+    animator.interpolator = DecelerateInterpolator()
+    animator.addUpdateListener { va ->
+        this.alpha = va.animatedValue as Float
+    }
+    animator.doOnEnd {
+        onEnd?.invoke()
+    }
+    animator.start()
+}
+
 fun View.verExpand(duration: Long, finalType: ViewType) {
     val animator =
         when (finalType){
