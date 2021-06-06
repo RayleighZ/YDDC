@@ -2,6 +2,10 @@ package com.example.yddc.util
 
 import com.example.yddc.R
 import com.example.yddc.model.bean.Word
+import com.example.yddc.ui.pages.community.adapter.CommunityRvAdapter
+import java.util.*
+import kotlin.random.Random.Default.nextBoolean
+import kotlin.random.Random.Default.nextInt
 
 /**
  * Author: RayleighZ
@@ -197,4 +201,77 @@ val fakeImage = listOf(
     R.drawable.gaokao,
     R.drawable.liuji,
     R.drawable.siji,
+)
+
+val fakeData = listOf(
+        CommunityRvAdapter.FakeData(
+                true,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                true,
+                2,
+                listOf(
+                        6,2
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                true,
+                3,
+                listOf(
+                        5,2,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        )
 )
