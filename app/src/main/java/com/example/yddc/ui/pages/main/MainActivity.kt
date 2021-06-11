@@ -42,6 +42,8 @@ class MainActivity : FragmentActivity() {
     private val wordsFragment by lazy { WordsFragment() }
     private val startRemFragment by lazy { StartRemFragment() }
 
+    var needShow = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -134,7 +136,7 @@ class MainActivity : FragmentActivity() {
         override fun handleMessage(msg: Message) {
             activity.apply {
                 cl_welcome.fadedTurn(1000, ViewType.TYPE_HIDE){
-                    cl_main.visibility = View.VISIBLE
+                    needShow = true
 //                    cl_main.fadedTurn(1000, ViewType.TYPE_SHOW)
                     if (UserService.getUserInfo() == null){
                         startActivity(
@@ -147,5 +149,11 @@ class MainActivity : FragmentActivity() {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (needShow)
+            cl_main.visibility = View.VISIBLE
     }
 }

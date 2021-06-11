@@ -4,6 +4,10 @@ import com.example.yddc.R
 import com.example.yddc.model.bean.DayProcess
 import com.example.yddc.model.bean.WeekProcess
 import com.example.yddc.model.bean.Word
+import com.example.yddc.ui.pages.community.adapter.CommunityRvAdapter
+import java.util.*
+import kotlin.random.Random.Default.nextBoolean
+import kotlin.random.Random.Default.nextInt
 
 /**
  * Author: RayleighZ
@@ -201,6 +205,7 @@ val fakeImage = listOf(
     R.drawable.siji,
 )
 
+<<<<<<< HEAD
 val hourProcess = listOf(
     listOf(3, 5, 7, 5, 8, 9, 6, 4, 4, 4, 8, 1),
     listOf(9, 3, 1, 6, 3, 3, 3, 4, 5, 3, 5, 3),
@@ -250,3 +255,75 @@ val fakeWeekProcess = WeekProcess(
     getDayProcessList()
 )
 
+val fakeData = listOf(
+        CommunityRvAdapter.FakeData(
+                true,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                true,
+                2,
+                listOf(
+                        6,2
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                true,
+                3,
+                listOf(
+                        5,2,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        ),
+        CommunityRvAdapter.FakeData(
+                false,
+                2,
+                listOf(
+                        0,1
+                )
+        )
+)
