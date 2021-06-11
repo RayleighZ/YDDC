@@ -2,18 +2,10 @@ package com.example.yddc.ui.pages.process
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.yddc.BaseApp
 import com.example.yddc.R
 import com.example.yddc.common.BaseFragment
-import com.example.yddc.common.toast
-import com.example.yddc.model.database.WordsModel
-import com.example.yddc.network.Api
-import com.example.yddc.network.api_generator.ApiGenerator
-import com.example.yddc.network.api_generator.safeSubscribeBy
-import com.example.yddc.network.api_generator.setSchedulers
+import com.example.yddc.model.database.words.WordsModel
 import com.example.yddc.ui.pages.process.adapter.ProcessRvAdapter
 import kotlinx.android.synthetic.main.fragment_process.*
 

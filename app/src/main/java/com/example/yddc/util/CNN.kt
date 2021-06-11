@@ -1,6 +1,8 @@
 package com.example.yddc.util
 
 import com.example.yddc.R
+import com.example.yddc.model.bean.DayProcess
+import com.example.yddc.model.bean.WeekProcess
 import com.example.yddc.model.bean.Word
 
 /**
@@ -198,3 +200,53 @@ val fakeImage = listOf(
     R.drawable.liuji,
     R.drawable.siji,
 )
+
+val hourProcess = listOf(
+    listOf(3, 5, 7, 5, 8, 9, 6, 4, 4, 4, 8, 1),
+    listOf(9, 3, 1, 6, 3, 3, 3, 4, 5, 3, 5, 3),
+    listOf(2, 3, 3, 7, 5, 6, 5, 2, 3, 2, 8, 2),
+    listOf(2, 2, 6, 4, 3, 4, 5, 3, 2, 5, 3, 7),
+    listOf(6, 4, 4, 6, 2, 6, 6, 4, 0, 5, 5, 5),
+    listOf(3, 4, 2, 7, 1, 3, 3, 4, 3, 5, 3, 3),
+    listOf(5, 8, 6, 4, 6, 9, 1, 3, 4, 4, 4, 4)
+)
+//
+val dayProcessInt = listOf(
+    63, 47, 47, 45, 52, 40, 57
+)
+//
+//val weekDataArray = listOf(
+//    listOf(
+//        11 , 5 , 20 , 11 , 15 , 8 , 0
+//    ),
+//    listOf(
+//        11 , 5 , 15 , 11 , 15 , 8 , 0
+//    ),
+//    listOf(
+//        40 , 8 , 17 , 47 , 15 , 8 , 0
+//    ),
+//    listOf(
+//        15 , 14 , 13 , 20 , 8 , 10 , 0
+//    )
+//)
+//
+fun getDayProcessList(): ArrayList<DayProcess>{
+    val list = ArrayList<DayProcess>()
+    for (i in 0..7){
+        list[i] = DayProcess(
+            ArrayList(hourProcess[i]),
+            dayTotalGoal = dayProcessInt[i],
+            dayTotalProcess = dayProcessInt[i],
+            dayStuTimeByMin = 246
+        )
+    }
+    return list
+}
+val fakeWeekProcess = WeekProcess(
+    350,
+    350,
+    120,
+    140,
+    getDayProcessList()
+)
+

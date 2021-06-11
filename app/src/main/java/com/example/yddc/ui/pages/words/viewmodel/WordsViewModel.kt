@@ -5,9 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.example.yddc.BaseApp
 import com.example.yddc.common.toast
 import com.example.yddc.model.bean.Word
-import com.example.yddc.model.database.WordsModel
+import com.example.yddc.model.database.words.WordsModel
 import com.example.yddc.util.insertEnter
-import kotlin.random.Random
 
 /**
  * Author: RayleighZ
