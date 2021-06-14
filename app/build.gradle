@@ -34,9 +34,13 @@ android {
         viewBinding true
     }
 }
-
+repositories {
+    mavenCentral()
+    jcenter()
+}
 dependencies {
-
+    compile 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'//2.1.0版本无bug
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
