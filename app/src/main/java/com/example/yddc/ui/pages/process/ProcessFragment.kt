@@ -1,5 +1,6 @@
 package com.example.yddc.ui.pages.process
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,13 +18,21 @@ class ProcessFragment : BaseFragment<ProcessViewModel>(R.layout.fragment_process
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rv_process.adapter = ProcessRvAdapter()
-        rv_process.layoutManager = LinearLayoutManager(requireContext())
-        tv_reload.setOnClickListener {
-            WordsModel.INSTANCE.apply {
-                setCurTag("CET6")
-                getWordsListFromNet()
-            }
+//        rv_process.adapter = ProcessRvAdapter()
+//        rv_process.layoutManager = LinearLayoutManager(requireContext())
+//        tv_reload.setOnClickListener {
+//            WordsModel.INSTANCE.apply {
+//                setCurTag("CET6")
+//                getWordsListFromNet()
+//            }
+//        }
+        cl_process.setOnClickListener {
+            startActivity(
+                Intent(
+                    requireContext(),
+                    ProcessActivity::class.java
+                )
+            )
         }
     }
 }

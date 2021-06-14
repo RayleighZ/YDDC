@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YDDC">
-        <activity android:name=".ui.pages.process.TotalProcessActivity"></activity>
+        <activity android:name=".ui.pages.process.ProcessActivity"></activity>
+        <activity android:name=".ui.pages.process.TotalProcessActivity" />
         <activity android:name=".ui.pages.login.LoginActivity" />
         <activity android:name=".ui.pages.main.MainActivity">
             <intent-filter>

@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.yddc"
-        minSdkVersion 28
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -79,4 +79,8 @@ dependencies {
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
     implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
+
+    //弹簧动画
+    def dynamicanimation_version = "1.0.0"
+    implementation 'androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version'
 }

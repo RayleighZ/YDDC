@@ -6,8 +6,6 @@ import com.example.yddc.model.bean.WeekProcess
 import com.example.yddc.model.bean.Word
 import com.example.yddc.ui.pages.community.adapter.CommunityRvAdapter
 import java.util.*
-import kotlin.random.Random.Default.nextBoolean
-import kotlin.random.Random.Default.nextInt
 
 /**
  * Author: RayleighZ
@@ -185,7 +183,7 @@ val fakeContent = listOf(
     "如何评价java借助ClassLoader实现一定程度上的动态性",
     "Kotlin这门语言真的可以实现跨端开发吗",
     "JS和java是啥关系",
-    "Trump fake news","如何在3天之内背完6级词汇",
+    "Trump fake news", "如何在3天之内背完6级词汇",
     "关于准备阶段，还有两个容易产生混淆的概念笔者需要着重强调，首先是这时候进行内存分配的\n" +
             "仅包括类变量，而不包括实例变量，实例变量将会在对象实例化时随着对象一起分配在Java堆中。其\n" +
             "次是这里所说的初始值“通常情况”下是数据类型的零值，假设一",
@@ -214,10 +212,12 @@ val hourProcess = listOf(
     listOf(3, 4, 2, 7, 1, 3, 3, 4, 3, 5, 3, 3),
     listOf(5, 8, 6, 4, 6, 9, 1, 3, 4, 4, 4, 4)
 )
+
 //
 val dayProcessInt = listOf(
     63, 47, 47, 45, 52, 40, 57
 )
+
 //
 //val weekDataArray = listOf(
 //    listOf(
@@ -234,18 +234,21 @@ val dayProcessInt = listOf(
 //    )
 //)
 //
-fun getDayProcessList(): ArrayList<DayProcess>{
+fun getDayProcessList(): ArrayList<DayProcess> {
     val list = ArrayList<DayProcess>()
-    for (i in 0..7){
-        list[i] = DayProcess(
-            ArrayList(hourProcess[i]),
-            dayTotalGoal = dayProcessInt[i],
-            dayTotalProcess = dayProcessInt[i],
-            dayStuTimeByMin = 246
+    for (i in 0..6) {
+        list.add(
+            DayProcess(
+                ArrayList(hourProcess[i]),
+                dayTotalGoal = dayProcessInt[i],
+                dayTotalProcess = dayProcessInt[i],
+                dayStuTimeByMin = 246
+            )
         )
     }
     return list
 }
+
 val fakeWeekProcess = WeekProcess(
     350,
     350,
@@ -255,74 +258,74 @@ val fakeWeekProcess = WeekProcess(
 )
 
 val fakeData = listOf(
-        CommunityRvAdapter.FakeData(
-                true,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                true,
-                2,
-                listOf(
-                        6,2
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                true,
-                3,
-                listOf(
-                        5,2,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
-        ),
-        CommunityRvAdapter.FakeData(
-                false,
-                2,
-                listOf(
-                        0,1
-                )
+    CommunityRvAdapter.FakeData(
+        true,
+        2,
+        listOf(
+            0, 1
         )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        true,
+        2,
+        listOf(
+            6, 2
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        true,
+        3,
+        listOf(
+            5, 2, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    ),
+    CommunityRvAdapter.FakeData(
+        false,
+        2,
+        listOf(
+            0, 1
+        )
+    )
 )

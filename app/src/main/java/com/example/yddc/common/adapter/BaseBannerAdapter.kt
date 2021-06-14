@@ -1,11 +1,9 @@
 package com.example.yddc.common.adapter
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.PagerAdapter
 import com.example.yddc.R
 import kotlinx.android.synthetic.main.item_banner.view.*
 
@@ -26,7 +24,7 @@ class BaseBannerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val iv = LayoutInflater.from(parent.context).inflate(R.layout.item_banner, parent, false)
-        return object : RecyclerView.ViewHolder(iv){ }
+        return object : RecyclerView.ViewHolder(iv) {}
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

@@ -12,4 +12,6 @@
     <color name="color_common_drag">#2d2d2d2d</color>
     <color name="color_common_level_one_text">#000000</color>
     <color name="color_common_level_two_text">#2d2d2d</color>
+    <color name="color_common_lty_blue">#66CCFF</color>
+    <color name="color_common_hot_pink">#FF69B4</color>
 </resources>
