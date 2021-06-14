@@ -7,7 +7,6 @@ import com.example.yddc.common.BaseFragment
 import com.example.yddc.ui.pages.main.MainActivity
 import com.example.yddc.ui.pages.words.viewmodel.StartRemViewModel
 import kotlinx.android.synthetic.main.fragment_rem_words.*
-import kotlinx.android.synthetic.main.fragment_rem_words.cv_photo
 import kotlinx.android.synthetic.main.fragment_words.*
 
 /**
@@ -21,6 +20,5 @@ class StartRemFragment: BaseFragment<StartRemViewModel>(R.layout.fragment_rem_wo
         tv_start_rem.setOnClickListener {
             (activity as MainActivity).startRemWords()
         }
-        cv_photo.alpha = 0f
     }
 }

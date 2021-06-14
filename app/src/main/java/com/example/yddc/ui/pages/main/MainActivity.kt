@@ -104,19 +104,19 @@ class MainActivity : FragmentActivity() {
         }
         val bottomSheetBehavior = BottomSheetBehavior.from(fcv_main_word_glance)
 
-        bottomSheetBehavior.addBottomSheetCallback(object :
-            BottomSheetBehavior.BottomSheetCallback() {
-            override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                }
-            }
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                startRemFragment.cv_photo?.alpha = slideOffset
-                wordsFragment.cv_photo?.alpha = slideOffset
-            }
-
-        })
+//        bottomSheetBehavior.addBottomSheetCallback(object :
+//            BottomSheetBehavior.BottomSheetCallback() {
+//            override fun onStateChanged(bottomSheet: View, newState: Int) {
+//                when (newState) {
+//                }
+//            }
+//
+////            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+////                startRemFragment.cv_photo?.alpha = slideOffset
+////                wordsFragment.cv_photo?.alpha = slideOffset
+////            }
+//
+//        })
 
         bottomSheetBehavior.peekHeight =
             bottomSheetBehavior.peekHeight + fcv_main_word_glance.topPadding
@@ -132,7 +132,7 @@ class MainActivity : FragmentActivity() {
         }
     }
 
-    class MyHandler(val activity: MainActivity) : Handler(Looper.myLooper()!!){
+    class MyHandler(private val activity: MainActivity) : Handler(Looper.myLooper()!!){
         override fun handleMessage(msg: Message) {
             activity.apply {
                 cl_welcome.fadedTurn(1000, ViewType.TYPE_HIDE){

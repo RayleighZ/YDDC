@@ -7,148 +7,332 @@
     tools:context=".ui.pages.process.ProcessActivity">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="16dp"
-        android:paddingHorizontal="16dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_process"
+        android:layout_width="189dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_common_white_round_conor"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="今日进度:"
+            android:textColor="@color/color_common_level_one_text"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="每月数据"
-                android:textColor="@color/color_common_level_one_text"
-                android:textSize="28sp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="今日新词:"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView2"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2" />
 
-            <CalendarView
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/shape_common_white_round_conor"
-                android:elevation="3dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_today_word_process_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/color_common_lty_blue"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+            tools:text="89词" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="本周数据"
-                android:textColor="@color/color_common_level_one_text"
-                android:textSize="28sp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="今日复习:"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView3"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView3" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="222dp"
-                android:padding="8dp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="15词"
+            android:textColor="@color/color_common_hot_pink"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView4"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="计划新词数量:"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_neymar_divide_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="123 词"
-                    android:textColor="@color/color_common_lty_blue"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView13" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="累计学习:"
+            app:layout_constraintStart_toStartOf="@+id/tv_today_word_process_num"
+            app:layout_constraintTop_toBottomOf="@+id/tv_today_word_process_num" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="计划复习单词数量:"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView14" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="250 词"
-                    android:textColor="@color/color_common_hot_pink"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView15" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="149词"
+            android:textColor="@color/color_common_lty_blue"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="完成新词数量:"
-                    app:layout_constraintStart_toStartOf="@+id/appCompatTextView16"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView16" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="本周新词"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="80 词"
-                    android:textColor="@color/color_common_lty_blue"
-                    app:layout_constraintStart_toStartOf="@+id/appCompatTextView17"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView17" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="366分钟"
+            android:textColor="@color/color_common_lty_blue"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView7"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView7" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/appCompatTextView19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="完成复习数量:"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView18" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="今日学习时常"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView6" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="200 词"
-                    android:textColor="@color/color_common_hot_pink"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/appCompatTextView19" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="450词"
+            android:textColor="@color/color_common_lty_blue"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView9"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView9" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    tools:listitem="@layout/item_process"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="本周复习"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView9"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView9" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="每日数据"
-                android:textColor="@color/color_common_level_one_text"
-                android:textSize="28sp" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="334词"
+            android:textColor="@color/color_common_hot_pink"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView10"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView10" />
 
-            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="本周进度"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView11"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView11" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="可以看出,本周您背单词效率较高的时间集中在:10:00~12:00\n建议您在这时开启背单词提醒"/>
-        </LinearLayout>
-    </ScrollView>
+        <com.example.yddc.ui.widget.DoubleColorProcessBar
+            android:id="@+id/doubleColorProcessBar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView12" />
 
+        <View
+            android:id="@+id/view4"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/color_common_lty_blue"
+            app:layout_constraintStart_toStartOf="@+id/doubleColorProcessBar"
+            app:layout_constraintTop_toBottomOf="@+id/doubleColorProcessBar" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="新单词"
+            android:textColor="@color/color_common_lty_blue"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view4"
+            app:layout_constraintStart_toEndOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="@+id/view4" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/color_common_hot_pink"
+            app:layout_constraintStart_toStartOf="@+id/doubleColorProcessBar"
+            app:layout_constraintTop_toBottomOf="@+id/doubleColorProcessBar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="复习的单词"
+            android:textColor="@color/color_common_hot_pink"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@+id/view5"
+            app:layout_constraintStart_toEndOf="@+id/view5"
+            app:layout_constraintTop_toTopOf="@+id/view5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="46dp"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:text="Gods determine what you are going to be.——Julius Erving\n\n人生的奋斗目标决定你将成为怎样的人。——欧文"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+        tools:layout_editor_absoluteX="113dp" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_sea_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="163dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_common_white_round_conor"
+        android:elevation="3dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cl_process"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前词汇：CET6"
+            android:textColor="@color/color_common_level_two_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="102dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cet6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_watch"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.17">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今日数据"
+            android:textColor="@color/color_common_level_one_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.119" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="掌握:    27"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="待记:    13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
