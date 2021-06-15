@@ -16,6 +16,8 @@ class WordsViewModel : ViewModel() {
 
     private var curWordIndex = 0
     private var rightAnswer = 0
+    private var rightCount = Array(20){0}
+    private var ifFavorite = Array(20){0}
     private val words by lazy { ArrayList<Word>() }
     lateinit var masterLevelList : Array<Int>
 
@@ -51,10 +53,21 @@ class WordsViewModel : ViewModel() {
     }
 
     fun showNext(){
-        totalProcess.set(totalProcess.get()?.plus(1))
-        masterLevelList[curWordIndex] = masterProcess.get()!!
-        curWordIndex++
-        showCurWords()
+        if(curWordIndex<19) {
+            totalProcess.set(totalProcess.get()?.plus(1))
+            masterLevelList[curWordIndex] = masterProcess.get()!!
+            curWordIndex++
+            showCurWords()
+        }
+    }
+
+    fun showLast(){
+        if(curWordIndex>0) {
+            totalProcess.set(totalProcess.get()?.minus(1))
+            masterLevelList[curWordIndex] = masterProcess.get()!!
+            curWordIndex--
+            showCurWords()
+        }
     }
 
     private fun showCurWords() {
@@ -87,12 +100,33 @@ class WordsViewModel : ViewModel() {
         }
     }
 
+    /**
+     * 仍然经常全错
+     */
     fun judgeAnswer(index: Int){
         if (index == rightAnswer){
             masterProcess.set(masterProcess.get()?.plus( 25))
             BaseApp.context.toast("正确!!")
+            if(rightCount[curWordIndex]<5)
+                rightCount[curWordIndex]++
         } else {
             BaseApp.context.toast("错误~")
+            //以下两行仅供测试显示用，总是错误的问题改后删除
+            if(rightCount[curWordIndex]<5)
+                rightCount[curWordIndex]++
         }
+    }
+
+    fun favorite(): Int{
+        if(ifFavorite[curWordIndex]==0){
+            ifFavorite[curWordIndex]=1
+        }else {
+            ifFavorite[curWordIndex]=0
+        }
+        return ifFavorite[curWordIndex]
+    }
+
+    fun getStarNum():Int{
+        return rightCount[curWordIndex]
     }
 }

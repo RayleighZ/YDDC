@@ -14,8 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="2dp"
-        android:elevation="3dp"
-        android:background="@drawable/shape_common_bottom_sheet">
+        android:background="@drawable/shape_common_bottom_sheet"
+        android:elevation="3dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/appCompatTextView"
@@ -35,27 +35,61 @@
             android:id="@+id/tv_words_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@{viewModel.tagText}"
+            android:text=""
             android:textColor="@color/color_common_level_two_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
-            tools:text="CET6" />
+            tools:text="" />
 
-        <ProgressBar
-            android:id="@+id/pb_words_master_level"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="136dp"
-            android:max="100"
-            android:progress="@{viewModel.masterProcess}"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_words_tag"
+        <ImageView
+            android:id="@+id/iv_star1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/star"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintEnd_toStartOf="@+id/iv_star2" />
+
+        <ImageView
+            android:id="@+id/iv_star2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/star"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintEnd_toStartOf="@+id/iv_star3" />
+        <ImageView
+            android:id="@+id/iv_star3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/star"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_words_tag"
-            app:layout_constraintTop_toTopOf="@+id/tv_words_tag" />
+            app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/iv_star4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/star"
+            android:layout_marginStart="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintStart_toEndOf="@+id/iv_star3" />
+        <ImageView
+            android:id="@+id/iv_star5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/star"
+            android:layout_marginStart="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintStart_toEndOf="@+id/iv_star4" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_words_clearfix"
@@ -78,11 +112,11 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/shape_text_tree_conor"
             android:padding="30dp"
-            android:layout_marginTop="8dp"
             android:text="@{viewModel.wordsSentence}"
             android:textColor="@color/color_common_level_two_text"
             android:textStyle="italic"
@@ -105,11 +139,19 @@ With the decrease of light intensity, rhizome biomass of clone and per unit leng
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="62dp"
-            android:layout_marginTop="20dp"
             android:src="@drawable/ic_sentence"
-            app:layout_constraintBottom_toBottomOf="@+id/pb_words_master_level"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.541" />
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_words_clearfix"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/last"
+            app:layout_constraintBottom_toTopOf="@+id/iv_sentence"
+            app:layout_constraintStart_toStartOf="@+id/iv_answer"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_answer"
@@ -121,11 +163,23 @@ With the decrease of light intensity, rhizome biomass of clone and per unit leng
             app:layout_constraintEnd_toStartOf="@+id/iv_sentence"
             app:layout_constraintTop_toTopOf="@+id/iv_sentence" />
 
+        <ImageView
+            android:id="@+id/iv_favorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/favorite"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sentence"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_star5"
+            app:layout_constraintTop_toTopOf="@+id/iv_sentence" />
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_meaning_choose"
-            android:layout_marginBottom="80dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView">
 
             <androidx.cardview.widget.CardView
@@ -264,6 +318,8 @@ With the decrease of light intensity, rhizome biomass of clone and per unit leng
                 android:src="@drawable/ic_earth"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_editor_absoluteX="111dp" />
+
+
         </androidx.cardview.widget.CardView>
 
         <ImageView
@@ -281,22 +337,33 @@ With the decrease of light intensity, rhizome biomass of clone and per unit leng
 
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:max="20"
             android:progress="@{viewModel.totalProcess}"
-            android:layout_width="200dp"
-            android:layout_marginTop="8dp"
-            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/last"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_next"
-            android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
