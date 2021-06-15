@@ -1,5 +1,6 @@
 package com.example.yddc.ui.pages.mine
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import com.example.yddc.R
@@ -17,71 +18,5 @@ class MineFragment : BaseFragment<MineViewModel>(R.layout.fragment_mine) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        val aaChartModel: AAChartModel = AAChartModel()
-            .chartType(AAChartType.Areaspline)
-            .title("每日时间统计")
-            .xAxisVisible(false)
-            .yAxisTitle("单词个数")
-            .subtitle("")
-            .backgroundColor("#ffffff")
-            .dataLabelsEnabled(true)
-            .series(
-                arrayOf(
-                    AASeriesElement()
-                        .name("单词个数")
-                        .data(
-                            arrayOf(
-                                0,
-                                0,
-                                3,
-                                0,
-                                2,
-                                21,
-                                25,
-                                2.5,
-                                2,
-                                18,
-                                13,
-                                9
-                            )
-                        )
-                )
-            )
-        aa_1.aa_drawChartWithChartModel(aaChartModel)
-
-        val aaChartModel2: AAChartModel = AAChartModel()
-            .chartType(AAChartType.Areaspline)
-            .title("近期背词趋势变化")
-            .subtitle("")
-            .xAxisVisible(false)
-            .yAxisTitle("单词个数")
-            .backgroundColor("#ffffff")
-            .dataLabelsEnabled(true)
-            .series(
-                arrayOf(
-                    AASeriesElement()
-                        .name("按周变化")
-                        .data(
-                            arrayOf(
-                                45,
-                                90,
-                                34,
-                                12,
-                                124,
-                                42,
-                                12,
-                                25,
-                                24,
-                                18,
-                                13,
-                                9
-                            )
-                        )
-                )
-            )
-        aa_1.aa_drawChartWithChartModel(aaChartModel)
-
-        aa_2.aa_drawChartWithChartModel(aaChartModel2)
     }
 }
